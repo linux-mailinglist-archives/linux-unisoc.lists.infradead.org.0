@@ -2,181 +2,91 @@ Return-Path: <linux-unisoc-bounces+lists+linux-unisoc=lfdr.de@lists.infradead.or
 X-Original-To: lists+linux-unisoc@lfdr.de
 Delivered-To: lists+linux-unisoc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58CEEED79D
-	for <lists+linux-unisoc@lfdr.de>; Mon,  4 Nov 2019 03:13:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85463ED78F
+	for <lists+linux-unisoc@lfdr.de>; Mon,  4 Nov 2019 03:13:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m27xG8lIf4N6rmtgHP1FWlEsg+7Q+X7/UYbO4O20E+k=; b=S8jAKQEHUWjunq
-	KZlWlD3JMg5DHNQ/joZQrW2VNdie4clEZV9YV2f/+3eLuHr4B0+LpBgb8IU3nEZA2fjoIenTJtCvc
-	ffxV5WVa8cBIfZtUdKUbgeo5gjU3ci+FlaUTfD7hlltf45Sm8NUtybTpefOLdm6Im/ruOe8Ue3lw7
-	kP28oCOM6LXsObmFBrwqmIisap9TKREyyE3mDwkPfFPArTnF+sgzdunqJyBaQYgiMUk0d6/1XIaka
-	hKNLXaO7hHuM6+mH7QOqF14+MvqwcUjBIThxG+4PdmDJcl43LbrFqU9kPN7O8/gH2oQKg616okk9p
-	Xlqm3gbrj5HJBdHrFMnA==;
+	List-Owner; bh=G1AGZxfPodFGwFG8euAD6VpDYGiRWTlZyeFvF8R87Ck=; b=iBUoc5hZt+PNfv
+	66jegisocKvFvtm9bbzVrSaoWO0u5PN4aM5KK5AAz75Npzx1fQFXmxXRVR/FNPtWFhb8m6FOfrZr7
+	84+BATYsJjyfkLeMxsydLfKJOU5Z4jb1BfFsBw7z+s0hiIcqm/PjXj5FOlzFRvBMRLrtSAVVrn0Yd
+	n4EGhoOlf91NYzB1NWxZc/AZcrqST0zC2sl9chLpuABwbaQzQYYhdSoIt+PyJFSQnZzf5tl65Skp5
+	X5unYpAJD5sHI5Frv4lAqkigrF88km/u1vwdwaNon5Vi4NSiWGt6ZEVhXmQx9N9ldPE+M5YrmD3lp
+	Gp05GRf7DGpgMEL2OkaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRRsA-0000IF-5N; Mon, 04 Nov 2019 02:13:38 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+	id 1iRRs7-0000EG-1v; Mon, 04 Nov 2019 02:13:35 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDPN8-0007ko-Sy; Thu, 26 Sep 2019 08:43:38 +0000
-Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa3.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa3.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: bGPvAKkYtCCIgj6XsufIyAqUrQrFHrlqJehWu8yrdxg4XiZIE8HY3m74zYA4pBIl2dM7Pq+ZiJ
- LMvmeWr6vZnbyNa1dvP5oH0bFOGDI+E7wEt2XDFgNrRn/F2jWKLV/Sui2cTi/x8ankFs/PIURZ
- TCg8MTFdqbtLfps3qWHL/iIhNj31YdPJxbUvZNLKnOEScDu8lsPFT/Lo48djBzoPV70jWJWvau
- vMusOB4QRQ1oBRtYgjzGwcUplzmz3fjJ4kwuop2bnbMgjUTrRgFlSlR/yGLz4fFsqwnPjLBbN+
- /Jg=
-X-IronPort-AV: E=Sophos;i="5.64,551,1559545200"; d="scan'208";a="50637679"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 26 Sep 2019 01:43:21 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 26 Sep 2019 01:43:00 -0700
-Received: from NAM03-DM3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Thu, 26 Sep 2019 01:43:00 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LAKd7nZdlrszjrScV/mDSpWwlBQpz4OW0Dq5CkoWjMuANbBM/5HX/mvCJ1BNkwGaou60fK1luDG1SuErBCcdivcJl6U97E+tf1icsRtvuQ/c+Vr2D92oKwwatg0KqviXN2zYMA798CDsrMljh0bRj+9j1SbWoeVILlyHFAkEqx84mpvhrLkUSFLHJt4KtSrf/z7OA4pgb9SOD2xLoG0W4nM2nMGaKlqL1hWyj4ap6F9Q7eD/Dwx55GTPy9NYABjKlRNGK1h+vhv9d6jaUomv8NBO5QBvowkgirRyJRDu6PpaLkQDcirfByS9IQ6JXG+x/2GcEY46GPeFLsYudjLlxw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6EWbUDqnvgUzzXQW00IRG+60rKbfAvKMDdZxX46efN0=;
- b=PMuHzwlKZ/fYZX5ADVZQMHPliV3OCxDJetV6TPNVzFVpB9wpLqxsMO4dGQNYuW20PuyJ1gi3lxhJY2T7t0XOtb60I9UIvRErFWu0AakkepzRnilU+wMxIEn7YSnUWm315jeiJ1n9jl3CaJ9iIFD9QOFvG/zkfG7//OozLJdk5UxfBrXWpS68TI21N8kiWIIiE7jSToEPXJyxoMNzYcFomFLL+dxvwKQ4CAd/GIYbuKUGFHRHwLgZbGNKfW9ygkwPtRQFbsZIhzc8QabpS3eFPJQig+U2BqU+r4p3K44MosG5VXOrEtN0H1s7i5FFbpsZO5ToS4D6o1jN0neJDEjLcg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6EWbUDqnvgUzzXQW00IRG+60rKbfAvKMDdZxX46efN0=;
- b=sRxHJIvVGtZ8/GEHxWp33aMPe7Q4GBN7VmF5wkFAFLTlyjSyrWQenBoVymB9ziCE1mLc20JUtKFtda5cfZmJD77buGVJQ/kmAe0jvenOIQF+StDHIvxBJI3+CHQiN/0f+r5T2RN8LBa8K6t8Z5LFY6BQYYDheLYNVw6KDBXpydM=
-Received: from MWHPR11MB1549.namprd11.prod.outlook.com (10.172.54.17) by
- MWHPR11MB1901.namprd11.prod.outlook.com (10.175.54.12) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.26; Thu, 26 Sep 2019 08:42:58 +0000
-Received: from MWHPR11MB1549.namprd11.prod.outlook.com
- ([fe80::1c73:1329:a07:ab9a]) by MWHPR11MB1549.namprd11.prod.outlook.com
- ([fe80::1c73:1329:a07:ab9a%12]) with mapi id 15.20.2305.017; Thu, 26 Sep 2019
- 08:42:57 +0000
-From: <Claudiu.Beznea@microchip.com>
-To: <daniel.lezcano@linaro.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>, 
- <linux@armlinux.org.uk>, <nsekhar@ti.com>, <bgolaszewski@baylibre.com>,
- <monstr@monstr.eu>, <john@phrozen.org>, <ralf@linux-mips.org>,
- <paul.burton@mips.com>, <jhogan@kernel.org>, <lftan@altera.com>,
- <tglx@linutronix.de>, <vgupta@synopsys.com>, <marc.zyngier@arm.com>,
- <patrice.chotard@st.com>, <mcoquelin.stm32@gmail.com>,
- <alexandre.torgue@st.com>, <eric@anholt.net>, <wahrenst@gmx.net>,
- <f.fainelli@gmail.com>, <rjui@broadcom.com>, <sbranden@broadcom.com>,
- <bcm-kernel-feedback-list@broadcom.com>, <linus.walleij@linaro.org>,
- <shc_work@mail.ru>, <kgene@kernel.org>, <krzk@kernel.org>,
- <ysato@users.sourceforge.jp>, <liviu.dudau@arm.com>, <sudeep.holla@arm.com>,
- <lorenzo.pieralisi@arm.com>, <shawnguo@kernel.org>, <s.hauer@pengutronix.de>, 
- <kernel@pengutronix.de>, <festevam@gmail.com>, <linux-imx@nxp.com>,
- <baohua@kernel.org>, <Nicolas.Ferre@microchip.com>,
- <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>,
- <baruch@tkos.co.il>, <u.kleine-koenig@pengutronix.de>, <guoren@kernel.org>,
- <kaloz@openwrt.org>, <khalasa@piap.pl>, <ssantosh@kernel.org>,
- <vz@mleia.com>, <slemieux.tyco@gmail.com>, <khilman@baylibre.com>,
- <avifishman70@gmail.com>, <tmaimon77@gmail.com>, <tali.perry1@gmail.com>,
- <venture@google.com>, <yuenn@google.com>, <benjaminfair@google.com>,
- <afaerber@suse.de>, <manivannan.sadhasivam@linaro.org>,
- <narmstrong@baylibre.com>, <agross@kernel.org>, <palmer@sifive.com>,
- <aou@eecs.berkeley.edu>, <heiko@sntech.de>, <orsonzhai@gmail.com>,
- <baolin.wang@linaro.org>, <zhang.lyra@gmail.com>,
- <maxime.ripard@bootlin.com>, <wens@csie.org>, <thierry.reding@gmail.com>,
- <jonathanh@nvidia.com>, <linux@prisktech.co.nz>, <john.stultz@linaro.org>,
- <sboyd@kernel.org>, <matthias.bgg@gmail.com>
-Subject: Re: [PATCH 0/7] add support for clocksource/clockevent DT selection
-Thread-Topic: [PATCH 0/7] add support for clocksource/clockevent DT selection
-Thread-Index: AQHVc8VbrLXkUp4vH02J/Sk0g3X+4Kc9pRwA
-Date: Thu, 26 Sep 2019 08:42:57 +0000
-Message-ID: <72edc5fd-df05-cba5-5aa7-39da1709415b@microchip.com>
+ id 1iEwjI-0005mh-Ts; Mon, 30 Sep 2019 14:32:50 +0000
+Received: by mail-oi1-f196.google.com with SMTP id k9so11282585oib.7;
+ Mon, 30 Sep 2019 07:32:48 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=kUMYVmu3XMOxDG5rrYQfwaFPZ00CpUb0hbyz3+BbaG0=;
+ b=Lf9o40fcYlA/8zr/t3sBOA30YEwf8ywN2f2CJsVJ0pAXKFPACLBWP04hbS3LC5ZDeL
+ N4aljkk2ejuLuxkT1FXdg5JkY6sSs01ZhHPirWqyCvt9VoCjRA0k9Bwr30PvHdICfjGH
+ INsw4/6t+PQgrP74R7tlYa2o7Tvyr8QaNQS4wclBTVs6rlVy6Tz4/jjVby3/tFch7PF2
+ lMJ3C26QQ5+IGC/VfCe1K+uKCSF18v6SG2TahQBh8pOwaHaVVhSJrc8Z41xQxSzEXK4h
+ vRmcEaprwOZxF/HPTyfrpbZJjlmtet1kCzp2rli3MxeJ93ETH/lWNeJehX8FYjq9Iy8F
+ Nq0Q==
+X-Gm-Message-State: APjAAAWLz4JoYdP1Q7nv6jmv95hZXKPEhFGbFqcKS9oihJZqaitdj+IV
+ tW0wiLbCQBnHlSOKiX4QAA==
+X-Google-Smtp-Source: APXvYqyWWGHweAxd+epg50sMtp2YxM9KH4bIudckXn/jzkB0T25eaocN5L6p2a1h/laqh+KPJMVjkw==
+X-Received: by 2002:aca:c792:: with SMTP id
+ x140mr18609373oif.132.1569853967784; 
+ Mon, 30 Sep 2019 07:32:47 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id t82sm4319977oie.12.2019.09.30.07.32.46
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 30 Sep 2019 07:32:47 -0700 (PDT)
+Date: Mon, 30 Sep 2019 09:32:46 -0500
+From: Rob Herring <robh@kernel.org>
+To: Claudiu.Beznea@microchip.com
+Subject: Re: [PATCH 4/7] dt-bindings: chosen: Add clocksource and clockevent
+ selection
+Message-ID: <20190930143246.GA19967@bogus>
 References: <1568123236-767-1-git-send-email-claudiu.beznea@microchip.com>
- <c3a68a08-d134-cd28-c8af-f757628e07f1@linaro.org>
-In-Reply-To: <c3a68a08-d134-cd28-c8af-f757628e07f1@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: MR2P264CA0113.FRAP264.PROD.OUTLOOK.COM
- (2603:10a6:500:33::29) To MWHPR11MB1549.namprd11.prod.outlook.com
- (2603:10b6:301:c::17)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tagtoolbar-keys: D20190926114228283
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: bc557067-1077-42be-6717-08d7425d8720
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:MWHPR11MB1901; 
-x-ms-traffictypediagnostic: MWHPR11MB1901:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MWHPR11MB19011D574DC5569C649FB82D87860@MWHPR11MB1901.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0172F0EF77
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(396003)(376002)(136003)(39860400002)(366004)(51914003)(199004)(189003)(446003)(4744005)(71200400001)(25786009)(386003)(6506007)(52116002)(229853002)(71190400001)(53546011)(6486002)(7416002)(76176011)(36756003)(7406005)(7366002)(31686004)(7336002)(14454004)(6512007)(66946007)(1191002)(561944003)(64756008)(66446008)(66476007)(7736002)(305945005)(99286004)(2501003)(5660300002)(102836004)(256004)(14444005)(66556008)(476003)(26005)(6116002)(6246003)(11346002)(486006)(86362001)(31696002)(316002)(8676002)(81166006)(81156014)(6436002)(478600001)(186003)(2171002)(3846002)(8936002)(110136005)(54906003)(2201001)(2616005)(4326008)(2906002)(66066001)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1901;
- H:MWHPR11MB1549.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: JsNRlFiKu2xImweAE+BluMpKIUoInHFuE2sg+dLKuGs4T9kFDOqgcHKJUCYS2gybgMXXZI5osydBUn9KNyoHWWJ6/NEaYP7KAKFfRJ0/CBzJRNVV9Mpz72YJ/dwnH04AjmMgpY41/nVVGtmUYJYTJXrEzGLfmayrGh8nNn5Sbf4qIM3pSA5H8Sl3NizOFZQjufDCOp/GxaNSWWnBaSVrEfjMjVKTtgnofFe0H1aEiy8Tt0GakCl/TvuOscqDULtqdRbtiBBDaTwX3stbA4aowKc9J1UXVNNUbKf75xSs3TjOyQ7u+YASL6mozZNWDOz84BYusPgi0naRrvDr9rr+RxZsw27ZcfUbWPxhjmHmc/eWGyOuc1UAcucjh0WBPML8WyL/9v1fZOEV2kZBxSHkZAgdTmCtqwt/9/u7k/BT0i0=
-Content-ID: <BCA8ECD1111F6948AB05E557D0B1C52E@namprd11.prod.outlook.com>
+ <1568123236-767-5-git-send-email-claudiu.beznea@microchip.com>
+ <20190910143231.GB14966@e107533-lin.cambridge.arm.com>
+ <ab43b209-78fa-0cab-b8ea-acd4c550e689@microchip.com>
+ <20190910150826.GA18308@e107533-lin.cambridge.arm.com>
+ <20190910151055.GX21254@piout.net>
+ <CACRpkda4mmpbPWa2nD93CvD6HWzcTUDzyyLdQxC2gNB7XiJF3w@mail.gmail.com>
+ <a2aca46a-8eb9-d8a8-de42-9850a8a8f44c@microchip.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: bc557067-1077-42be-6717-08d7425d8720
-X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Sep 2019 08:42:57.4048 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: eE5XSWl4V1fxZGL0K/Lmn+PqH/2rvLsnNBp8C6u5rbSFictpiZGwaDBVFvOtdFPhk1KlWc6lCOOc/r1X6WP3h/tNVqI8F7Vm3oPSfeDBGRU=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1901
+Content-Disposition: inline
+In-Reply-To: <a2aca46a-8eb9-d8a8-de42-9850a8a8f44c@microchip.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_014335_061859_1D0C3B5A 
-X-CRM114-Status: GOOD (  10.15  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190930_073248_964476_4CD284B7 
+X-CRM114-Status: GOOD (  15.87  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-X-Mailman-Approved-At: Sun, 03 Nov 2019 18:13:28 -0800
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+X-Mailman-Approved-At: Sun, 03 Nov 2019 18:13:27 -0800
 X-BeenThere: linux-unisoc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -189,49 +99,103 @@ List-Post: <mailto:linux-unisoc@lists.infradead.org>
 List-Help: <mailto:linux-unisoc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-unisoc>,
  <mailto:linux-unisoc-request@lists.infradead.org?subject=subscribe>
-Cc: uclinux-h8-devel@lists.sourceforge.jp, devicetree@vger.kernel.org,
+Cc: tmaimon77@gmail.com, linus.walleij@linaro.org, nsekhar@ti.com,
+ guoren@kernel.org, linux-stm32@st-md-mailman.stormreply.com, heiko@sntech.de,
  linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, openbmc@lists.ozlabs.org, linux-oxnas@groups.io,
- linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
- linux-unisoc@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ khilman@baylibre.com, Ludovic.Desroches@microchip.com, linux-imx@nxp.com,
+ u.kleine-koenig@pengutronix.de, uclinux-h8-devel@lists.sourceforge.jp,
+ marc.zyngier@arm.com, s.hauer@pengutronix.de, linux-unisoc@lists.infradead.org,
+ khalasa@piap.pl, tglx@linutronix.de, sbranden@broadcom.com,
+ linux-kernel@vger.kernel.org, ralf@linux-mips.org, paul.burton@mips.com,
+ kernel@pengutronix.de, mark.rutland@arm.com, alexandre.belloni@bootlin.com,
+ jhogan@kernel.org, palmer@sifive.com, eric@anholt.net,
+ thierry.reding@gmail.com, manivannan.sadhasivam@linaro.org,
+ ysato@users.sourceforge.jp, zhang.lyra@gmail.com, daniel.lezcano@linaro.org,
+ jonathanh@nvidia.com, bgolaszewski@baylibre.com, kgene@kernel.org,
+ alexandre.torgue@st.com, linux-arm-msm@vger.kernel.org, sudeep.holla@arm.com,
+ lorenzo.pieralisi@arm.com, john.stultz@linaro.org,
  linux-rpi-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-tegra@vger.kernel.org, nios2-dev@lists.rocketboards.org,
- linux-riscv@lists.infradead.org, linux-snps-arc@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+ linux-arm-kernel@lists.infradead.org, baohua@kernel.org, kaloz@openwrt.org,
+ sboyd@kernel.org, patrice.chotard@st.com, wahrenst@gmx.net,
+ mcoquelin.stm32@gmail.com, narmstrong@baylibre.com,
+ linux-tegra@vger.kernel.org, festevam@gmail.com, f.fainelli@gmail.com,
+ benjaminfair@google.com, shc_work@mail.ru, krzk@kernel.org, yuenn@google.com,
+ wens@csie.org, bcm-kernel-feedback-list@broadcom.com, orsonzhai@gmail.com,
+ linux-snps-arc@lists.infradead.org, rjui@broadcom.com, vz@mleia.com,
+ john@phrozen.org, tali.perry1@gmail.com, avifishman70@gmail.com,
+ venture@google.com, lftan@altera.com, linux-oxnas@groups.io,
+ shawnguo@kernel.org, afaerber@suse.de, baruch@tkos.co.il,
+ maxime.ripard@bootlin.com, liviu.dudau@arm.com, linux-mips@vger.kernel.org,
+ linux-riscv@lists.infradead.org, openbmc@lists.ozlabs.org,
+ linux@armlinux.org.uk, agross@kernel.org, slemieux.tyco@gmail.com,
+ devicetree@vger.kernel.org, aou@eecs.berkeley.edu,
+ linux-mediatek@lists.infradead.org, ssantosh@kernel.org,
+ matthias.bgg@gmail.com, monstr@monstr.eu, baolin.wang@linaro.org,
+ vgupta@synopsys.com, Nicolas.Ferre@microchip.com, linux@prisktech.co.nz,
+ nios2-dev@lists.rocketboards.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-unisoc" <linux-unisoc-bounces@lists.infradead.org>
 Errors-To: linux-unisoc-bounces+lists+linux-unisoc=lfdr.de@lists.infradead.org
 
+On Wed, Sep 11, 2019 at 07:18:07AM +0000, Claudiu.Beznea@microchip.com wrote:
+> 
+> 
+> On 11.09.2019 03:03, Linus Walleij wrote:
+> > External E-Mail
+> > 
+> > 
+> > On Tue, Sep 10, 2019 at 4:11 PM Alexandre Belloni
+> > <alexandre.belloni@bootlin.com> wrote:
+> >> On 10/09/2019 16:08:26+0100, Sudeep Holla wrote:
+> >>> On Tue, Sep 10, 2019 at 02:51:50PM +0000, Claudiu.Beznea@microchip.com wrote:
+> > 
+> >>> In that case, why can't we identify capability that with the compatibles
+> >>> for this timer IP ?
+> >>>
+> >>> IOW, I don't like the proposal as it's hardware limitation.
+> >>
+> >> To be clear, bot timers are exactly the same but can't be clocksource
+> >> and clockevent at the same time. Why would we have different compatibles
+> >> for the exact same IP?
+> > 
+> > In that case why not just pick the first one you find as clocksource
+> > and the second one as clock event? As they all come to the
+> > same timer of init function two simple local state variables can
+> > solve that:
+> > 
+> > static bool registered_clocksource;
+> > static bool registered_clockevent;
+> > 
+> > probe(timer) {
+> >    if (!registered_clocksource) {
+> >        register_clocksource(timer);
+> >        registrered_clocksource = true;
+> >        return;
+> >    }
+> >    if (!registered_clockevent) {
+> >        register_clockevent(timer);
+> >        registered_clockevent = true;
+> >        return;
+> >    }
+> >    pr_info("surplus timer %p\n", timer);
+> > }
+> > 
+> 
+> That was also my proposal for the driver I'm sending this series for (see
+> [1]) but it has been proposed to implement a mechanism similar to this one
+> in this series (see [2] and [3]).
 
+This comes up over and over, and the answer is still no. Either each 
+block is identical and doesn't matter which one is used for what or 
+there is some h/w difference that you should describe. 
 
-On 25.09.2019 20:19, Daniel Lezcano wrote:
-> External E-Mail
-> 
-> 
-> Hi Claudiu,
-> 
-> On 10/09/2019 15:47, Claudiu Beznea wrote:
->> Hi,
->>
->> This series adds support to permit the selection of clocksource/clockevent
->> via DT.
-> 
-> Thanks for the proposal and taking care of making some progress on this.
-> 
-> I just wanted to let you know I've been traveling but the series is in
-> my pipe and I did not forget it. I'll comment it next week.
+If you want something that would even be considered to put into DT, 
+then define something BSD or other OS's could use too. (That's not a 
+suggestion to respin this with generalized names.)
 
-Hi Daniel,
+Rob
 
-No problem. Thank you for letting me know.
-
-Claudiu
-
-> 
->  -- Daniel
-> 
-> 
 _______________________________________________
 linux-unisoc mailing list
 linux-unisoc@lists.infradead.org
