@@ -2,68 +2,73 @@ Return-Path: <linux-unisoc-bounces+lists+linux-unisoc=lfdr.de@lists.infradead.or
 X-Original-To: lists+linux-unisoc@lfdr.de
 Delivered-To: lists+linux-unisoc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EA19D7DC7
-	for <lists+linux-unisoc@lfdr.de>; Tue, 15 Oct 2019 19:30:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CF9BD7DD6
+	for <lists+linux-unisoc@lfdr.de>; Tue, 15 Oct 2019 19:31:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=z3QBnWMgBgzTk891fzZNMjqMG5Txb/Lo4azr8DMfUVs=; b=GQd
-	PEfvy4zdlMW/Z1naKQ5K+DEO/UARaKGBW4EzU28qUIkI53HDnuqas9jWqMGRRCcPEHxMcrS1xG/5W
-	JsooBcFjnivtCOqoNvMcRaQZ+UpZoyOB1K1bnd+rD4ouX+P3vmhmqL+Rl0TMZFxZTnS3NH6I4Ys9x
-	3k3amtzZupZCmxwD92Emi0eEmVWPNfWcSRUMJ+9PnkQaDnfjLNErX6BjPglyRG2rd+vaj1ZMjdNf/
-	GYezC8i+3MzwH2CGT8jQqsEcVKM06UGDrqAAtCPtfh8ib21EdG5658W6F34qzKr7iK6IX2ff+/5M+
-	o0EYoXCUwnnTWrPtmqGgBVS/IEHe9BQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=HhZTSoWjo2SIy5DycYSuDUk/Im4euXM/74GX4O15yN0=; b=rpEKS63xESyYgXGNGZzFrnrWSh
+	LXpsUJZPtVYHTw+IIJaCamINbbfSv9O8BpMnxfz8y5spBU1FuyMoEslbd3hI5H96ZPRbp9XHkU4HG
+	R5FvlAagCS0RA54qHiQTNGh4fbm6FgvqXbvbiG5nvNVivl9vXq1clvaBP6D1Ncx+qWHeJzuFvZBN6
+	r74iKSWT/arxnxVvvwkIt4dvAJRk34SvHOHBgfVjdr4avYhlwZpsb9XORNcGoltsSvckX+q/nO1p/
+	VZVZUTCvAF3ye2m0heJcyQIHoTSwFOnYvrEtAuMDdBQW3TntGTGR2YYoItgXMRbv9M3zpiBxOekxO
+	T5Vpkx9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKQeg-00067X-VJ; Tue, 15 Oct 2019 17:30:42 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iKQfi-0006sB-6v; Tue, 15 Oct 2019 17:31:46 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKQee-00066Z-NK
- for linux-unisoc@lists.infradead.org; Tue, 15 Oct 2019 17:30:42 +0000
-Received: by mail-pf1-x442.google.com with SMTP id q10so12932709pfl.0
- for <linux-unisoc@lists.infradead.org>; Tue, 15 Oct 2019 10:30:40 -0700 (PDT)
+ id 1iKQek-00069u-Ja
+ for linux-unisoc@lists.infradead.org; Tue, 15 Oct 2019 17:30:50 +0000
+Received: by mail-pg1-x543.google.com with SMTP id k20so5200913pgi.1
+ for <linux-unisoc@lists.infradead.org>; Tue, 15 Oct 2019 10:30:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=qGTmzDxe583R/v3aUC27S2QW45EmLA5xRgdHBmdZQi8=;
- b=DONTslugMGlqg9iBy9hmK9+7DEX/oNOpdshb8MJixifpM3883pIwAXkZJP1899eOOe
- csSfbo+FfCUiV+kVq7hiQ6pfbD6C87oLMXyDBdhV1/GSBdsQlOFUXMCGmLBgSxaz8gVO
- aq5UY0uVYcnU2VSFQ6oY4dt8Tp8J1z42id9np5S3hIk0vE1uwM3DsdKmQW1R/7aLH8jG
- q0S2ackCH3BX/uK8e8Yuc1GGllaGYLaTzYn9Koq29PK7q2/q3L2zUh7SxdkvQU/6ZEXI
- I6iu/jFbMxnwHYX1qP1OeSzoTYe0Sdg3Dnx8IWPp3RvJj1kQ4gTKKM6YsmrjLX56IHwk
- PeAA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=P585Wb4GdNSdANLbtZBTejDHy0hzt6pLG6Y0SHAZ9bU=;
+ b=lpDLdyz6gnJaWTKjbVWSVfNBu6KMNSTe2jzE7hfZCBE/yhgGo3bcfsuo4VE0UxQoWT
+ H75k5eMOlfLtO8A5ocoGCBC7WwIrGu5NhtVp7sU2OSO24qCzmwJDv9mjbf2XfFIjl7AP
+ o0S59xqf2//C6qUa9OfgSXewKWN/9kN7P7YL82zLiYeepojPRIAT70xwjfgaY7nVRaaq
+ MD5K5/WkIIMWT6vpdY5VfZPa9lGszMYcM9U188QDbEmSIifvhXo6ozxs2zk6P00wavPd
+ x2Mtub+9nA8TRjOg44JFhRheRbLuOWlMlpV1hlNq3nE6bqeO8B0DoDLFYO+gjSMX4vyS
+ W9qQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=qGTmzDxe583R/v3aUC27S2QW45EmLA5xRgdHBmdZQi8=;
- b=hPhwRTO0/kBhgBrl+1SdsBSJh9nFLkbP9/ft7F9qH/kiOnwE8tGiXArzPunUm1bySa
- 1NWRBu4qh3XQGcPvXXD4C4lCrJ6hj6YR+rxrxwn4/JDQpHwM5NsM5NGvQvQhBr9AucGa
- IsUN23aKig9RYUx4q3/IpvRbKLNpLEkJf1BB1nU7wskSh0/zQMGok70XY5lev2HdB9Qv
- znT6Mf3v7QZiS7lMA7lJUFahQLKh6lVXOKRuH68PVRpxj8xb6Ii1D/xSc+SooKG0uv+X
- kLPNqnNK1ThaZNHk1x6rN9apmmJdo7Jrmlzb6/+joOGC3NLkGpKeSR2b2Zl8TPq6Bj75
- mlug==
-X-Gm-Message-State: APjAAAXCtRtB2OVLgy18Sz8hfAQH0hNfqtWWi57+do+hAWm253vCLGij
- jbhvbPis4IJTzYaYfwjPcRbW
-X-Google-Smtp-Source: APXvYqwu/2hvE2QpunG0Cb+S5rWtvqa1YDgqbHA1dUUgRwBSbSv1CfKKSL1Lqvwq3gQUc0UEbDlZjw==
-X-Received: by 2002:a63:1f52:: with SMTP id q18mr40306261pgm.35.1571160639901; 
- Tue, 15 Oct 2019 10:30:39 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=P585Wb4GdNSdANLbtZBTejDHy0hzt6pLG6Y0SHAZ9bU=;
+ b=rR0g1diFffPfThyzNYHF5MvCUzgpAu/LVqCk2zF1A5yzSzwCtL9ynnpliAATgrfwIe
+ 4C0ZCFolfm7D8MAfVIDc+0CU6VWxqD4demP4H67ooiC7+6sP8oEZrIIImAMygvMuF70m
+ Y1NjbssXlmx6Xw0Nz1ZNDFGJaJvSuKnZja2MMMV+VfsZk3HRG8m3Tf5mocTCdvXX48xr
+ gBdWuPtG5toqRsDrLjgk/VogkInE6wyklZR5Gs+bpN23lLAnfvy7TUs3SHTEhuiDwO7l
+ /7O1K+/5NcLrgWUa+Vq37WJjOYkcuJBuiLI3lfcf7rXDiSHmGCKXXR5udjvl2fnt7PeP
+ T0tw==
+X-Gm-Message-State: APjAAAUXxUxBLIoN20HZblVaW6hrzLUGKhGuQO7Lnbp4cu9qrSVk75Rv
+ NGCRCXSu34K9UkEtmeHp7Fa2
+X-Google-Smtp-Source: APXvYqwbCLpdmWKTZmSl1oTdfCb2flyajMLs6QMZwE38ftfHAg1sNcGjH12xadW0vkB52MaxPKYLhA==
+X-Received: by 2002:aa7:8249:: with SMTP id e9mr38929777pfn.46.1571160645036; 
+ Tue, 15 Oct 2019 10:30:45 -0700 (PDT)
 Received: from localhost.localdomain
  ([2409:4072:6003:7cb8:25e8:2c45:fab2:b0c7])
- by smtp.gmail.com with ESMTPSA id w11sm28033563pfd.116.2019.10.15.10.30.34
+ by smtp.gmail.com with ESMTPSA id w11sm28033563pfd.116.2019.10.15.10.30.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 10:30:39 -0700 (PDT)
+ Tue, 15 Oct 2019 10:30:44 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: linus.walleij@linaro.org,
 	bgolaszewski@baylibre.com
-Subject: [PATCH v2 0/4] Add GPIO support for RDA8810PL SoC
-Date: Tue, 15 Oct 2019 23:00:22 +0530
-Message-Id: <20191015173026.9962-1-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v2 1/4] dt-bindings: gpio: Add devicetree binding for RDA
+ Micro GPIO controller
+Date: Tue, 15 Oct 2019 23:00:23 +0530
+Message-Id: <20191015173026.9962-2-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191015173026.9962-1-manivannan.sadhasivam@linaro.org>
+References: <20191015173026.9962-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_103040_771883_4BCBD368 
-X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-CacheID: sfid-20191015_103046_702773_E7DB521F 
+X-CRM114-Status: UNSURE (   9.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,44 +109,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-unisoc" <linux-unisoc-bounces@lists.infradead.org>
 Errors-To: linux-unisoc-bounces+lists+linux-unisoc=lfdr.de@lists.infradead.org
 
-Hello,
+Add YAML devicetree binding for RDA Micro GPIO controller.
 
-This patchset adds GPIO controller support for RDA Micro RDA8810PL
-SoC. This SoC has 4 GPIO controllers and each handles 32 GPIOs. Except
-GPIOC, all controllers are capable of generating edge/level interrupts
-from first 8 GPIO lines. The pinctrl part for this SoC will be added
-later.
-
-This driver has been validated on 96Boards OrangePi i96 board from
-Shenzhen Xunlong Software Co.,Limited with libgpiod.
-
-Thanks,
-Mani
-
-Changes in v2:
-
-As per the review by Bartosz:
-
-* Dropped the not implemented gpio_request/free callbacks.
-* Used device_* helper to fetch ngpios.
-
-Manivannan Sadhasivam (4):
-  dt-bindings: gpio: Add devicetree binding for RDA Micro GPIO
-    controller
-  ARM: dts: Add RDA8810PL GPIO controllers
-  gpio: Add RDA Micro GPIO controller support
-  MAINTAINERS: Add entry for RDA Micro GPIO driver and binding
-
- .../devicetree/bindings/gpio/gpio-rda.yaml    |  50 +++
- MAINTAINERS                                   |   2 +
- arch/arm/boot/dts/rda8810pl.dtsi              |  48 +++
- drivers/gpio/Kconfig                          |   8 +
- drivers/gpio/Makefile                         |   1 +
- drivers/gpio/gpio-rda.c                       | 315 ++++++++++++++++++
- 6 files changed, 424 insertions(+)
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+---
+ .../devicetree/bindings/gpio/gpio-rda.yaml    | 50 +++++++++++++++++++
+ 1 file changed, 50 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/gpio/gpio-rda.yaml
- create mode 100644 drivers/gpio/gpio-rda.c
 
+diff --git a/Documentation/devicetree/bindings/gpio/gpio-rda.yaml b/Documentation/devicetree/bindings/gpio/gpio-rda.yaml
+new file mode 100644
+index 000000000000..6ece555f074f
+--- /dev/null
++++ b/Documentation/devicetree/bindings/gpio/gpio-rda.yaml
+@@ -0,0 +1,50 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/gpio/gpio-rda.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: RDA Micro GPIO controller
++
++maintainers:
++  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
++
++properties:
++  compatible:
++    const: rda,8810pl-gpio
++
++  reg:
++    maxItems: 1
++
++  gpio-controller: true
++
++  "#gpio-cells":
++    const: 2
++
++  ngpios:
++    description:
++      Number of available gpios in a bank.
++    minimum: 1
++    maximum: 32
++
++  interrupt-controller: true
++
++  "#interrupt-cells":
++    const: 2
++
++  interrupts:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - gpio-controller
++  - "#gpio-cells"
++  - ngpios
++  - interrupt-controller
++  - "#interrupt-cells"
++  - interrupts
++
++additionalProperties: false
++
++...
 -- 
 2.17.1
 
