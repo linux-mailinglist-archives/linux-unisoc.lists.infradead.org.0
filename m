@@ -2,7 +2,7 @@ Return-Path: <linux-unisoc-bounces+lists+linux-unisoc=lfdr.de@lists.infradead.or
 X-Original-To: lists+linux-unisoc@lfdr.de
 Delivered-To: lists+linux-unisoc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91A25DE4C5
+	by mail.lfdr.de (Postfix) with ESMTPS id AF316DE4C6
 	for <lists+linux-unisoc@lfdr.de>; Mon, 21 Oct 2019 08:45:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -11,63 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HhZTSoWjo2SIy5DycYSuDUk/Im4euXM/74GX4O15yN0=; b=cMGct2eNVbfioKSAHmZgN/DuQ2
-	Jwb8uTkG+78j7WmR69v9hMlopPlT1tDLpvTt0UX26rujpmrVLg7M4MGPreDUXQa9DOaKyYZgevJ9T
-	sOEDqp2CZVrSuKnNbaavBR4U1QqvV+XWlf/3Q65I7++eIc706ojNgLw35R3iQXLbxa1xem0flXuWm
-	5kVdccoqck9rl4zJzgBUExWQamhAMvq7pQRIgyY8QMzmcrAr8Rxgh9RRrBm8YRMyeIcRoxc3Jwzev
-	0S0c3Hjg0wB0ilbSe9bSBDJj4g5xoAAg+lSbkwXUbgSMS5bxtDvV9Qjv9Kh7j4glTPZiDitUeiLY9
-	pO00PO0A==;
+	bh=ZAU2FOuvQjB5eQpw2H8FQmYRMlIA0ai0EOXwzwrTGeI=; b=sNPnTj8tPkt+RhJDYGRL8aiJxZ
+	vaSQ7dGUb7ZiGt7Om4jkFW3qVwXtL7tzZXqgpwzTy5AEp1to1klo0ToE2QjUmVsf7XTNnv4mZGUpn
+	fpjKv8B6qkfstR/ZOVxHI4ba7BUkT6F3eWlWofhjsKlcR6Rx+sQUywaePz5N07DvJ56dixLWVJeBf
+	A4gRmzVCZhC4LldvoVDAmLEj29ePSfyC5JtdaU7DyV3JuoS/ZmqIxNup1/atw+I5LZRcyNBBXF0uQ
+	6qwm+6uX4uYbX9xGgX84L3Fo44jzKDtSuxJYpW3tBt1Gy8uCU89jYmVLys6B99jaZ2R50sQ0sCWuK
+	FyoJF4jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMRRA-0004Qc-N3; Mon, 21 Oct 2019 06:45:04 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iMRRB-0004TV-Hx; Mon, 21 Oct 2019 06:45:05 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMRQc-0003hU-2X
- for linux-unisoc@lists.infradead.org; Mon, 21 Oct 2019 06:44:33 +0000
-Received: by mail-pg1-x541.google.com with SMTP id e10so7140437pgd.11
- for <linux-unisoc@lists.infradead.org>; Sun, 20 Oct 2019 23:44:29 -0700 (PDT)
+ id 1iMRQi-0003nt-Np
+ for linux-unisoc@lists.infradead.org; Mon, 21 Oct 2019 06:44:38 +0000
+Received: by mail-pl1-x641.google.com with SMTP id d22so6130026pll.7
+ for <linux-unisoc@lists.infradead.org>; Sun, 20 Oct 2019 23:44:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=P585Wb4GdNSdANLbtZBTejDHy0hzt6pLG6Y0SHAZ9bU=;
- b=o2UCcVa98LWeVYND0PE/v8hZfB6qvv7otuszYHpwOafbshMElcl2fopVc68goHvkSU
- 4osSwuadu1/VmaP0pLtxQKWtvAHZjAbwXkJelhOa3PgwYAHDSwuEH9Ggv1L6RW1qguu1
- FWyVBRvOZbpj9GlVvA40GiIUh8M0+AJVzBXrFHzz9zAU1HElW1NHOHZctsx/WFe/jdQI
- 3MjIj195CY/+vzsde3JHST48qEYNuagUXETObyQdmtnR6EfpH5aEy8B0HvhyYmbPmVgS
- 9Ppwb539dHA3fbb/ONOn8qyo0Asm7y4sNhwbi6Eotg5qRu5+H/iYKdxJ7OsyHlLKFRc1
- V/9A==
+ bh=y09+A5UHDqq1M123Rs3HINM2fRslFLIQNP0UXzIqt20=;
+ b=sH0DWc/9J+xztx+v2+sYpW4kmEmR2Klhj5Gi0lkv9oWDCKWpeN4HReH5VgoPdMnqPk
+ owKBe9GYpPO6zuCw0HbO2cstyfFua0nPZyKeiJcr5+bgkHCpnLzL/cmInNJhuY1SD6F1
+ EHRH+YFFpf9yiDZDGNwTsaMZhMhaS9d6gwL3rQKMBBww/9Xx/tlXLCAJAM0CbVVC8h4Y
+ w12LPhCvOssAhXfSsFjQB7R1ppj2HWxmq3x3uiXEbZEB3vKbtgHIuGumpEC1XhwxMEwR
+ qR5hI4rcnEtBxoha6aA7PKICz1cGMmtsXOiEgrSi0DlAyG7Ai1Px1V9zaMlIfLJppcPr
+ eKvw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=P585Wb4GdNSdANLbtZBTejDHy0hzt6pLG6Y0SHAZ9bU=;
- b=TOfW/iNKxqAA2nmlpc4vrx/RuTWMOsiA565BfSRNc2I2+KtJgoM0iS0VABld819nbS
- R0zvdiNS07WCQxlXu0j3qTiGAlE+FMoY3pW2Ekh2EZU9iiQ090+7O93KQmGxutIv9EUp
- OnHGi/Y1oGVamvcK5cPMx9b3fyPVpvNfYMYt5TqZNVv8hfc/k7aiTIkoO3bdcRAX09g8
- dqI1LAKNyuIs9zWu411oQvza4BNKMj38ymXzq7AdNrI9dcWHM2mXqKIcGnBoF1AVSQBB
- VA4wMcWJamcHyMrRgnxXjUb6oKTS/DAevEdS/HcW2jP9GSLTBgvxG55CWJIQaFaIbeXD
- YL7Q==
-X-Gm-Message-State: APjAAAWULnLJYxoKmZNfbI8xIjqlfk4jTTZ6uNlPSNjl0GP1FQkL5rCd
- 3B5BVTVyLT/kIdPfmqK0oFPJ
-X-Google-Smtp-Source: APXvYqzT1XpwNz5+vlVRLju+CTTRBtcnDqb2C9zsWzuD9d6oV4fIlpTWzzYHcDfIgijryYQagwybBA==
-X-Received: by 2002:a63:a02:: with SMTP id 2mr106677pgk.389.1571640269210;
- Sun, 20 Oct 2019 23:44:29 -0700 (PDT)
+ bh=y09+A5UHDqq1M123Rs3HINM2fRslFLIQNP0UXzIqt20=;
+ b=RGrC3Z7zZun0TXLMh+6KasRXlwwOqk9xzHfc0LHGjBgtGenaBnnZd0hcmHUZ7n6oRg
+ WeTNrJXEaUT+oAcQI8xwJc620hLG4DfkO2Rg2KcXOL27zxXaC0O6h0OBeq3PJxEUm2LY
+ Tt2Q31hRGfLDdhmBzUm69aFu53mcis0hg/EnDiWRrzZ9506FPPyD4k3xpMi1XO5dT0gD
+ a1k6DgyR8sxMueCoX+QT9DCHjRBIFmWUT6LDUeUju4VAnOmlKERpDlZDyzujdfJAVWOt
+ QoeKuBVYgsdpISGzl/MJ58v2+AEV+POZdWnKml9M4AJmkrS5HExq83yBL7s5XhmQBQNO
+ Bexw==
+X-Gm-Message-State: APjAAAXtK5nhwoP9xLLrOJNdrALWeEeJMjH8wqBm2aN84OXpVAgDCPlK
+ YZIfog6vGVknlPgLTNbvgGrPgaPZYw==
+X-Google-Smtp-Source: APXvYqxPhLkcBeLz4GhQJY9kMAw0mTGSMhjl28NPa7yczQYGjEFA5o8+rFn/oYcTZP67N76WzNr99Q==
+X-Received: by 2002:a17:902:8505:: with SMTP id
+ bj5mr13002459plb.296.1571640275358; 
+ Sun, 20 Oct 2019 23:44:35 -0700 (PDT)
 Received: from localhost.localdomain ([2405:204:700f:8db6:2442:890f:ac37:8127])
- by smtp.gmail.com with ESMTPSA id d4sm13156624pjs.9.2019.10.20.23.44.25
+ by smtp.gmail.com with ESMTPSA id d4sm13156624pjs.9.2019.10.20.23.44.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 20 Oct 2019 23:44:28 -0700 (PDT)
+ Sun, 20 Oct 2019 23:44:33 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: linus.walleij@linaro.org,
 	bgolaszewski@baylibre.com
-Subject: [PATCH v3 1/4] dt-bindings: gpio: Add devicetree binding for RDA
- Micro GPIO controller
-Date: Mon, 21 Oct 2019 12:14:10 +0530
-Message-Id: <20191021064413.19840-2-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v3 2/4] ARM: dts: Add RDA8810PL GPIO controllers
+Date: Mon, 21 Oct 2019 12:14:11 +0530
+Message-Id: <20191021064413.19840-3-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191021064413.19840-1-manivannan.sadhasivam@linaro.org>
 References: <20191021064413.19840-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_234430_142098_A2DA9284 
-X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-CacheID: sfid-20191020_234436_798829_F28825C8 
+X-CRM114-Status: UNSURE (   8.16  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,70 +108,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-unisoc" <linux-unisoc-bounces@lists.infradead.org>
 Errors-To: linux-unisoc-bounces+lists+linux-unisoc=lfdr.de@lists.infradead.org
 
-Add YAML devicetree binding for RDA Micro GPIO controller.
+Add GPIO controllers for RDA8810PL SoC. There are 4 GPIO controllers
+in this SoC with maximum of 32 gpios. Except GPIOC, all controllers
+are capable of generating edge/level interrupts from first 8 lines.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- .../devicetree/bindings/gpio/gpio-rda.yaml    | 50 +++++++++++++++++++
- 1 file changed, 50 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/gpio/gpio-rda.yaml
+ arch/arm/boot/dts/rda8810pl.dtsi | 48 ++++++++++++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/gpio/gpio-rda.yaml b/Documentation/devicetree/bindings/gpio/gpio-rda.yaml
-new file mode 100644
-index 000000000000..6ece555f074f
---- /dev/null
-+++ b/Documentation/devicetree/bindings/gpio/gpio-rda.yaml
-@@ -0,0 +1,50 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/gpio/gpio-rda.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/arch/arm/boot/dts/rda8810pl.dtsi b/arch/arm/boot/dts/rda8810pl.dtsi
+index 19cde895bf65..f30d6ece49fb 100644
+--- a/arch/arm/boot/dts/rda8810pl.dtsi
++++ b/arch/arm/boot/dts/rda8810pl.dtsi
+@@ -33,6 +33,21 @@
+ 		ranges;
+ 	};
+ 
++	modem@10000000 {
++		compatible = "simple-bus";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges = <0x0 0x10000000 0xfffffff>;
 +
-+title: RDA Micro GPIO controller
++		gpioc@1a08000 {
++			compatible = "rda,8810pl-gpio";
++			reg = <0x1a08000 0x1000>;
++			gpio-controller;
++			#gpio-cells = <2>;
++			ngpios = <32>;
++		};
++	};
 +
-+maintainers:
-+  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+ 	apb@20800000 {
+ 		compatible = "simple-bus";
+ 		#address-cells = <1>;
+@@ -60,6 +75,39 @@
+ 				     <17 IRQ_TYPE_LEVEL_HIGH>;
+ 			interrupt-names = "hwtimer", "ostimer";
+ 		};
 +
-+properties:
-+  compatible:
-+    const: rda,8810pl-gpio
++		gpioa@30000 {
++			compatible = "rda,8810pl-gpio";
++			reg = <0x30000 0x1000>;
++			gpio-controller;
++			#gpio-cells = <2>;
++			ngpios = <32>;
++			interrupt-controller;
++			#interrupt-cells = <2>;
++			interrupts = <12 IRQ_TYPE_LEVEL_HIGH>;
++		};
 +
-+  reg:
-+    maxItems: 1
++		gpiob@31000 {
++			compatible = "rda,8810pl-gpio";
++			reg = <0x31000 0x1000>;
++			gpio-controller;
++			#gpio-cells = <2>;
++			ngpios = <32>;
++			interrupt-controller;
++			#interrupt-cells = <2>;
++			interrupts = <13 IRQ_TYPE_LEVEL_HIGH>;
++		};
 +
-+  gpio-controller: true
-+
-+  "#gpio-cells":
-+    const: 2
-+
-+  ngpios:
-+    description:
-+      Number of available gpios in a bank.
-+    minimum: 1
-+    maximum: 32
-+
-+  interrupt-controller: true
-+
-+  "#interrupt-cells":
-+    const: 2
-+
-+  interrupts:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - gpio-controller
-+  - "#gpio-cells"
-+  - ngpios
-+  - interrupt-controller
-+  - "#interrupt-cells"
-+  - interrupts
-+
-+additionalProperties: false
-+
-+...
++		gpiod@32000 {
++			compatible = "rda,8810pl-gpio";
++			reg = <0x32000 0x1000>;
++			gpio-controller;
++			#gpio-cells = <2>;
++			ngpios = <32>;
++			interrupt-controller;
++			#interrupt-cells = <2>;
++			interrupts = <14 IRQ_TYPE_LEVEL_HIGH>;
++		};
+ 	};
+ 
+ 	apb@20a00000 {
 -- 
 2.17.1
 
