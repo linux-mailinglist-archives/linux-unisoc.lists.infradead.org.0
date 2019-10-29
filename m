@@ -2,66 +2,66 @@ Return-Path: <linux-unisoc-bounces+lists+linux-unisoc=lfdr.de@lists.infradead.or
 X-Original-To: lists+linux-unisoc@lfdr.de
 Delivered-To: lists+linux-unisoc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6684ED799
-	for <lists+linux-unisoc@lfdr.de>; Mon,  4 Nov 2019 03:13:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EA90ED79A
+	for <lists+linux-unisoc@lfdr.de>; Mon,  4 Nov 2019 03:13:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=afYFse7quc2ZDOtoYq8wnsPq++0WqPNhi9DbDliDw/Q=; b=DCwzxoa+73tcNL
-	W9Z2FCTUlgX4vVGPebusTZcyfss960MujK4eJR0tUhakMXewV7Mp3kSF+q7HvmzMvRFvgR0MDda2r
-	nQj8ZmC+t8cbemSdRGc3VghlU6D1th3iM5nu8UkoGL4ULbPDtEhIwPTlHERw6fR07BnKq8DA7DBsc
-	AqEMiRLHJMGBqQOAAF+OPEZVS/Uf5XqkHbeDkxHzgNZ19GBtwDfLj/TXQXX7Hl1vpaF86nJLtOssR
-	iSskaZsawHxMEDntbNAEnjs7p6+vMa81zIqLf6uo0OOBw+Peg95qNl7yGMTJwaJknvPZ27P4es8pk
-	FHdDt/jjvU3mI2geFC6g==;
+	List-Owner; bh=MM88tJ7JfMO6tifQSt12KcR0Wa5jnGhhDEYYQc/ZhpY=; b=lMTgUfxXD7KNF8
+	wh678T2uwtGB4yL8j28mF6Vnq9R0a6ELk+YunuTUN3rsoOAQyR2TGtMuzX2GCzLLlufnMRwi/TcXs
+	o9c21//Fa9LR4m1g4EU13SMs7HHggeLWZJBWHgKwQFnoPswgQhDiB1SNdReU6K3cZZGaV4T5Yt5n4
+	G/yGKSy6qp43fi8F4YK3f399W52u4+CCXha+yPvBT8SXt07TYOdtbFotLF5jAaenqFMOnOn34+mBD
+	0ENCPkL8JU+/v6mf85pnE2renZo1tZCVwTs1KXrHtK1i24liPqYR158MNaer8lzp+wCHfVcEWgJBM
+	c1cycn46fKhmfO685nLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRRs9-0000H5-Jb; Mon, 04 Nov 2019 02:13:37 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1iRRs9-0000HU-Nq; Mon, 04 Nov 2019 02:13:37 +0000
+Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPSE9-000095-KX
- for linux-unisoc@lists.infradead.org; Tue, 29 Oct 2019 14:12:06 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id k15so8835634vsp.2
- for <linux-unisoc@lists.infradead.org>; Tue, 29 Oct 2019 07:12:05 -0700 (PDT)
+ id 1iPSG4-0000sa-9d
+ for linux-unisoc@lists.infradead.org; Tue, 29 Oct 2019 14:14:07 +0000
+Received: by mail-ua1-x943.google.com with SMTP id l38so3844719uad.4
+ for <linux-unisoc@lists.infradead.org>; Tue, 29 Oct 2019 07:14:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xtktdibe6gBkHP4tPalXgDCM43ByFj/zHBOZyxypx60=;
- b=Qvlup8zh+vLsFrMkO5ZeuRaMLG8t9uMEwxGgfA94WDokIhbNSmVCtyY5vd1PLlUONQ
- hddCB9BL5rtyItUiFyH1HY4b9YOYbr8vntDY1XeFHIRvVoonKG8VsFvqpT2EfV2h9x9Z
- i0se1YYEoWyyXwb96308pcLUbl9QKmC6Sf1vRj1Nlzct1OcLSw/WLAkyBrczUB75lWW/
- LLLUfaDOyIJSjqUR3bcNYEYIiPFplhimNhZ/bYg1v4OYMeAFz17lv9i1SiNQ8Luq8Z/H
- WJUxOtuWg21TvkLrZbc/vThifzfQdFa63F/R1G74iOsmJ06i8uHoxw65zf9ZAkUbOU6m
- VoGQ==
+ :cc; bh=WRiAkOhbI4dV58chbNSol3Yacs8NwxdmyZ2dChnRtrM=;
+ b=xajKtnJrhLWyaOykhKGtlxEGtudWLdubnUwcx9nZIUmZ4B4YcwrOPiyj85JY+B6kxA
+ uT2KUH+00Vf5ICMMKVHjppY+r/euFqo4OijPnQeKEp5lNbBSxpgT1jL68LVXsnvoNTA5
+ s0f0EGVTrFfjcYf3jfJFCVHPjNHopZ/3FeHYPtMdAIRL0lJsT1x95wGkyZ5O3eTrynBR
+ tJw5mEIpEpxkuCVlRhHU7wNjXhJH4apI5dDYiIwN+Bx2LjcyVYa3HphmngId8dOU8EQ7
+ 3dv0emRFlpZpV/ZQ24gLpSg/D/u4yH52OPvGqnZR6PfQn3c5lnm9ynCXkzLAY8NcZ2Zr
+ 2jzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=xtktdibe6gBkHP4tPalXgDCM43ByFj/zHBOZyxypx60=;
- b=s/4NvRuPeh992u41u93l2OkjTrE+kpzp+K/07lKcaZ4JYx5Og2eYzUPy7BW8/9AX1S
- YsKQ54k3cd4c0XNWtPUvdNAViqVcx4UGJKWrupewOcMRzD8p0dZjFFw2uDSnepqVgXsb
- ePVoXe2HI4xMCvx34J0dBb6YrFnDn0yyovw8u/sfYpP0mTG5IX34vGRPr6FhicfwX63l
- ZIJpxIv9HNwlVAW8DILqNXYvBHfoibQrw08MBFxztqQW+XAzkC71v9nWue3wSw9hXl32
- zQ3cGjqBLS9b3o/C0NUEqgG+r9OIT3WUXj169R0uz6TfmVpUn7g1oVksYRcg8+NBiShM
- iYgQ==
-X-Gm-Message-State: APjAAAWHhktM2kpUFr61yuBLoZH7mVMkRHwa7jxdiBRknWIBR54aksSx
- BYAcKDhVGa2pXugkPtdUeZx0q4d4wESXuOTiPWkeiQ==
-X-Google-Smtp-Source: APXvYqx7ASj2tpxKnJFCPomdz3ErcWX3mA9SxsCo3/V2wa1imgq/JhXcbzExPy2tHa2a7tITSN4nUS0fO3+VSrk8K5Q=
-X-Received: by 2002:a67:2e11:: with SMTP id u17mr1866632vsu.84.1572358324433; 
- Tue, 29 Oct 2019 07:12:04 -0700 (PDT)
+ bh=WRiAkOhbI4dV58chbNSol3Yacs8NwxdmyZ2dChnRtrM=;
+ b=fNdU0hEbra2yZAlLesH6qyFQ5dK5R5FhWCVyVfYn87kWOZav0KzuHs7/smWxka9ySL
+ r5bfYGrdFI6/tbRu46yUV/W0HUA74t/W+uWyGQgaulkW3XSz30vCw3JfkBalvcE+qSCj
+ 8oFZvaUWRd8hPPbo9dS85rlvVNsdAn3j2FL3u8zKEOsCes1jDuEE2G4vk6DK+86hEVih
+ f94Hb5CPayZpSfr4xGafRquFCZXA1pF//MaZ95XBKzGw+Z2IeqA510q5LSosPjQuEwPM
+ HXAIP4iWu/i9zzusuBquUROWQzlvqkvzg0mvm5RGE8e+uU8h0iICA0EYsYC+HIHYvepk
+ /pFQ==
+X-Gm-Message-State: APjAAAUIqwiaKL7LKs1y5qh+CnjsM8Ai83XKT8wuIRU9nrm/m/Oi9X6U
+ /NYsyQw+xqvY2TgX/MrwrD/bRk8RC2tCZVn9CtdIgQ==
+X-Google-Smtp-Source: APXvYqwXDN2mRvdj+26BcZ/ILI0ofvlyph74hhkrx25WZ8XAd6RsJ1WmNMUZxWgcMl8KizcybIyWzpVf3nQ5cmC3Sso=
+X-Received: by 2002:a9f:31a9:: with SMTP id v38mr4022990uad.33.1572358443061; 
+ Tue, 29 Oct 2019 07:14:03 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191021064413.19840-1-manivannan.sadhasivam@linaro.org>
- <20191021064413.19840-3-manivannan.sadhasivam@linaro.org>
-In-Reply-To: <20191021064413.19840-3-manivannan.sadhasivam@linaro.org>
+ <20191021064413.19840-4-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20191021064413.19840-4-manivannan.sadhasivam@linaro.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 29 Oct 2019 15:11:53 +0100
-Message-ID: <CACRpkdbQH+=ZMLeZ_uO14=XgadgKr0ogT9S4vTXNosjKT14MnA@mail.gmail.com>
-Subject: Re: [PATCH v3 2/4] ARM: dts: Add RDA8810PL GPIO controllers
+Date: Tue, 29 Oct 2019 15:13:51 +0100
+Message-ID: <CACRpkdbSF8C=fY8s-=e=zVjTHu30_mA+MP=Y_J=jkSp96APWhw@mail.gmail.com>
+Subject: Re: [PATCH v3 3/4] gpio: Add RDA Micro GPIO controller support
 To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_071205_672983_4EA914D5 
-X-CRM114-Status: UNSURE (   6.69  )
+X-CRM114-CacheID: sfid-20191029_071404_340967_E3252885 
+X-CRM114-Status: UNSURE (   6.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -69,7 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,13 +106,17 @@ Errors-To: linux-unisoc-bounces+lists+linux-unisoc=lfdr.de@lists.infradead.org
 On Mon, Oct 21, 2019 at 8:44 AM Manivannan Sadhasivam
 <manivannan.sadhasivam@linaro.org> wrote:
 
-> Add GPIO controllers for RDA8810PL SoC. There are 4 GPIO controllers
-> in this SoC with maximum of 32 gpios. Except GPIOC, all controllers
-> are capable of generating edge/level interrupts from first 8 lines.
+> Add support for GPIO controller from RDA Micro. This GPIO controller
+> is an in house IP, developed by RDA Micro (now Unisoc) for the use in
+> RDA88* series of SoCs. There are multiple GPIO ports present in all SoCs,
+> each capable of addressing 32 GPIOs. But only first 8 pins have the
+> interrupt capability.
 >
 > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Not even 300 lines! Nice.
+
+Patch applied!
 
 Yours,
 Linus Walleij
